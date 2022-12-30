@@ -8,7 +8,7 @@
 
 
 
-**1.array()函数**
+### **1.array()函数**
 
 ```python
 numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)
@@ -16,7 +16,7 @@ numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmi
 
 ![image-20221227161034268](NumPy入门.assets/image-20221227161034268.png)
 
-实列
+实例：
 
 ```python
 import numpy as np
@@ -55,6 +55,205 @@ print(arr5)
 [1. 2. 3. 4. 5.]
 [(b'jack', 18, 99.9) (b'tom', 19, 98.9)]
 ```
+
+
+
+### **2.empty(函数)**
+
+````python
+numpy.empty(shape, dtype = float, order = 'C')
+````
+
+
+
+### **3.zeros()函数**
+
+```python
+numpy.zeros(shape, dtype = float, order = 'C')
+```
+
+
+
+### **4.ones()函数**
+
+```python
+numpy.zeros(shape, dtype = None, order = 'C')
+```
+
+
+
+![image-20221230102853059](NumPy入门.assets/image-20221230102853059.png)
+
+
+
+实例：
+
+```python
+# empty()函数
+arr6 = np.empty([3, 2], dtype=int)
+print(arr6)
+
+# zeros()函数
+arr7 = np.zeros(5)
+print(arr7)
+
+# zeros()函数
+arr8 = np.zeros([3, 2], dtype=[('x', 'i4'), ('y', '<f4')])
+print(arr8)
+
+# ones()函数
+arr = np.ones(5)
+print(arr)
+
+arr = np.ones([2, 2], dtype=int)
+print(arr)
+
+输出结果：
+[[ 6917529027641081856  5764616291768666155]
+ [ 6917529027641081859 -5764598754299804209]
+ [          4497473538      844429428932120]]
+[0. 0. 0. 0. 0.]
+[[(0, 0.) (0, 0.)]
+ [(0, 0.) (0, 0.)]
+ [(0, 0.) (0, 0.)]]
+[1. 1. 1. 1. 1.]
+[[1 1]
+ [1 1]]
+```
+
+
+
+### **5.full()函数**
+
+```python
+numpy.zeros(shape, fill_value, dtype = None, order = 'C')
+```
+
+
+
+实例：
+
+```python
+# full()函数
+arr = np.full(5, fill_value=1024)
+print(arr)
+
+arr = np.full([3, 2], fill_value=1024)
+print(arr)
+
+输出结果：
+[1024 1024 1024 1024 1024]
+[[1024 1024]
+ [1024 1024]
+ [1024 1024]]
+```
+
+
+
+### **6.eye()函数**
+
+```python
+numpy.eye(N, M=None, k=0, dtype = float, order = 'C')
+N:行数量
+M:列数量，默认等于行数量，可选
+```
+
+
+
+实例：
+
+````python
+# eye()函数
+arr = np.eye(10, dtype=int)
+print(arr)
+
+输出结果：
+[[1 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0]
+ [0 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0]
+ [0 0 0 0 0 0 1 0 0 0]
+ [0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 1]]
+````
+
+
+
+### 7.arange()函数
+
+```python
+numpy.arange(start, stop, step, dtype)
+```
+
+![image-20221230105909873](NumPy入门.assets/image-20221230105909873.png)
+
+
+
+实例：
+
+````python
+# arange()函数
+arr = np.arange(1, 11, 2)
+print(arr)
+
+输出结果：
+[1 3 5 7 9]
+````
+
+
+
+### 8.linspace()函数(等差数列)
+
+````python
+np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+````
+
+![image-20221230110401685](NumPy入门.assets/image-20221230110401685.png)
+
+
+
+实例：
+
+```python
+# linspace()函数
+arr = np.linspace(10, 20, 5, endpoint=True)
+print(arr)
+
+输出结果：
+[10.  12.5 15.  17.5 20. ]
+```
+
+
+
+### 9.logspace()函数(等比数列)
+
+### 
+
+````python
+np.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
+````
+
+![image-20221230110920985](NumPy入门.assets/image-20221230110920985.png)
+
+
+
+实例：
+
+```python
+# logspace()函数
+arr = np.logspace(0, 9, 10, base=2)
+print(arr)
+
+输出结果：
+[  1.   2.   4.   8.  16.  32.  64. 128. 256. 512.]
+```
+
+
+
+
 
 
 
